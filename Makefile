@@ -5,7 +5,7 @@ deploy:
 	docker-compose up --build -d
 
 ssh-api:
-	docker exec -it django_app_cli /bin/bash
+	docker exec -it django_app_api /bin/bash
 
 run-tests:
 	python manage.py test -v 2 user_api.tests

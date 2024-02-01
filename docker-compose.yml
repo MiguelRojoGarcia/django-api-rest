@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
 
-  django_app_cli:
-    container_name: django_app_cli
+  django_app_api:
+    container_name: django_app_api
     build:
       context: .
     env_file:
