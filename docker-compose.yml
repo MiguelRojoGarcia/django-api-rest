@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+
+  django_app_cli:
+    container_name: django_app_cli
+    build:
+      context: .
+    env_file:
+      - .env
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./:/app
+    networks:
+      - django_app_network
+    depends_on:
+      - django_app_mysql
+
+  django_app_mysql:
+    container_name: django_app_mysql
+    platform: linux/x86_64
+    build:
+      context: ./docker/mysql/.
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    ports:
+        - "${MYSQL_HOST_PORT}:3306"
+    networks:
+      - django_app_network
+
+#Docker Networks
+networks:
+  django_app_network:
+    name: django_app_network

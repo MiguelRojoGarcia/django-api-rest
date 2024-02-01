@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "eb3bdbbf-7453-4dc1-8699-0e59c6c88aaf",
+		"name": "NinjaTalent Python",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2618948"
+	},
+	"item": [
+		{
+			"name": "getusers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/getusers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"getusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"name\": \"Miguel Rojo\",\n        \"email\": \"mrojo@example.com\",\n        \"birth_date\": \"1985-06-29\",\n        \"address\": {\n            \"street\": \"Conde de orgaz\",\n            \"state\": \"Málaga\",\n            \"city\": \"Marbella\",\n            \"country\": \"Spain\",\n            \"zip\": \"29660\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/createusers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"createusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUsersById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"name\": \"Miguel Rojo\",\n        \"email\": \"mrojo@example.com\",\n        \"birth_date\": \"1985-06-29\",\n        \"address\": {\n            \"street\": \"Conde de orgaz\",\n            \"state\": \"Málaga\",\n            \"city\": \"Marbella\",\n            \"country\": \"Spain\",\n            \"zip\": \"29660\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/updateUsersById/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"updateUsersById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getusersById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/getusersById/10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"getusersById",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUsersById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/deleteUsersById/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"deleteUsersById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
